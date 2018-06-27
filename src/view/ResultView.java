@@ -94,6 +94,7 @@ public class ResultView {
 		btnAnalysis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.Analysis();
+				controller.setResult(textArea);
 			}
 		});
 		btnAnalysis.setBounds(22, 84, 89, 23);

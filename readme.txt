@@ -1,0 +1,2 @@
+จาก assignment ข้อ 1 ได้ทำ window application ด้วยภาษา java ในการอ่านไฟล์ promotion.log โดยการกดปุ่ม read file โปรแกรมจะทำการอ่านไฟล์ จากนั้น กดปุ่ม Analysis เพื่อทำการหาผลลัพธ์ของข้อมูล
+และกดปุ่ม write file เพื่อให้ ได้ json file ที่ต้อการโดยต้องบันทึกไฟล์ชื่อว่า report.json ไว้โฟลเดอร์เดียวกับ web file

@@ -47,7 +47,7 @@ public class FileManagement {
             jsonObject.put("phoneno", lst.get(i).getPhoneNo());
             jsonObject.put("usedate",lst.get(i).getUseDate());
             jsonObject.put("usetime", lst.get(i).getUseTime());
-            jsonObject.put("expense", lst.get(i).getExpense());
+            jsonObject.put("expense", String.format ("%.2f", lst.get(i).getExpense()));
             fileWriter.write(jsonObject.toString());
             if(i<lst.size()-1) {
             	fileWriter.write(",");

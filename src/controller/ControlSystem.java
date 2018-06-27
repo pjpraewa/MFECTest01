@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import javax.swing.JTextArea;
+
 import org.json.JSONException;
 
 import model.Consumer;
@@ -16,6 +18,7 @@ public class ControlSystem {
 	private FileManagement fm ;
 	private String filedata;
 	private ArrayList<Consumer> lstConsumers;
+	private ArrayList<String> result;
 
 	
 	public void StartApplication() {
@@ -62,6 +65,34 @@ public class ControlSystem {
 		fm.writeDataFile(fn, lstConsumers);
 		
 	}
+	
+	public ArrayList<String> getResult(){
+		result = new ArrayList<String>();
+		String header = "เบอร์โทรศัพท์      \t  วันที่      \t เวลาที่ใช้  (นาที)\t ค่าใช้บริการ  (บาท)\n";
+		String l = "--------------------------------------------------------------------------------------------------------------------\n";
+		result.add(l);
+		result.add(header);
+		result.add(l);
+		
+		for(int i = 0 ; i < lstConsumers.size(); i++) {
+			String detail = lstConsumers.get(i).getPhoneNo()+" \t"+lstConsumers.get(i).getUseDate()+"  \t "+
+						lstConsumers.get(i).getUseTime()+"   \t"+String.format("%.2f", lstConsumers.get(i).getExpense())+"\n";
+			result.add(detail);
+		}
+
+		return result;
+		
+	}
+	
+	public void setResult(JTextArea textArea) {
+		result =  getResult();
+		String r = "";
+		for(int i = 0; i<result.size();i++) {
+			r += result.get(i);
+		}
+		textArea.setText(r);
+	}
+
 
 
 }
